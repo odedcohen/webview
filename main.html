@@ -7,11 +7,8 @@ App version: <div id="app-version"> </div>
 var element = document.getElementById("app-version");
 element.innerHTML = "Unknown";
 try {
-  var version = chrome.webview.hostObjects.viz.version;
-  if (!version)
-      element.innerHTML = "failed to retrieve version";
-  else
-      element.innerHTML = version; 
+  var viz = chrome.webview.hostObjects.viz;
+  element.innerHTML = await viz.version; 
 } catch (e) { 
   element.innerHTML = "Exception Caught: " + e.message;
 }
