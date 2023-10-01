@@ -1,0 +1,20 @@
+<html>
+This is a test
+
+App version: <div id="app-version"> </div>
+
+<script>
+var element = document.getElementById("app-version");
+element.innerHTML = "Unknown";
+try {
+  var version = vizWidget.version;
+  if (!version)
+      element.innerHTML = "failed to retrieve version";
+  else
+      element.innerHTML = "version"; 
+} catch (e) { 
+  element.innerHTML = "Exception: " + e.message;
+}
+</script>
+
+</html>
