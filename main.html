@@ -8,7 +8,7 @@ var element = document.getElementById("app-version");
 element.innerHTML = "Unknown";
 try {
   var viz = chrome.webview.hostObjects.viz;
-  element.innerHTML = await viz.version; 
+  element.innerHTML = await viz.getVersion(); 
 } catch (e) { 
   element.innerHTML = "Exception Caught: " + e.message;
 }
