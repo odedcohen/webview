@@ -7,7 +7,7 @@ App version: <div id="app-version"> </div>
 var element = document.getElementById("app-version");
 element.innerHTML = "Unknown";
 try {
-  var version = vizWidget.version;
+  var version = chrome.webview.hostObjects.vizWidget.version;
   if (!version)
       element.innerHTML = "failed to retrieve version";
   else
